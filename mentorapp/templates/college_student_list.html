@@ -1,0 +1,57 @@
+
+{% extends "mentorapp_header.html" %}
+{% block content %}
+
+{% if 'onlineapp.add_student' in user_permissions %}
+<a href="{% url 'add_student_html' college_id %}">Add Student To the college</a>
+{% endif %}
+<table class="table">
+    <tr>
+        <thead class="thead-dark">
+        <th>
+            Code
+        </th>
+        <th>
+            Name
+        </th>
+        {% if 'onlineapp.change_student' in user_permissions %}
+        <th>
+            Edit
+        </th>
+        {% endif %}
+        {% if 'onlineapp.delete_student' in user_permissions %}
+        <th>
+            Delete
+        </th>
+        {% endif %}
+        </thead>
+
+    </tr>
+    {% for i in student_list %}
+    <tr>
+        <td>
+            {{ i.name }}
+        </td>
+        <td>
+            {{ i.email }}
+        </td>
+        {% if 'onlineapp.change_student' in user_permissions %}
+        <td>
+            <a href="{% url 'edit_student_html' i.college_id i.id %}">Edit</a>
+        </td>
+        {% endif %}
+        {% if 'onlineapp.delete_student' in user_permissions %}
+        <td>
+             <a href="{% url 'delete_student_html' i.college_id i.id %}">Delete</a>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is a test for template</title>
+</head>
+<body align="center" >
+    this is a test for the template using testfile.html showing the list of colleges and their acronyms <br>
+    <br>
+
+
+    <table border="1" >
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Acronym
+            </th>
+        </tr>
+            {% for i in college %}
+        <tr>
+            <td>
+                {{ i.name }}
+            </td>
+            <td>
+                {{ i.acronym }}
+            </td>
+        </tr>
+            {% endfor %}
+    </table>
+
+
+
+</body>
+</html>

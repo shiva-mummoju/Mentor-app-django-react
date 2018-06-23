@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students of college</title>
+</head>
+<body>
+
+<h1>Showing the list of students from one particular college</h1>
+
+<table>
+    <tr>
+        <th>
+            name
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            Mocktest total
+        </th>
+    </tr>
+
+    {% for i in students %}
+
+    <tr>
+        <td>
+            {{i.name}}
+        </td>
+        <td>
+            {{i.email}}
+        </td>
+        <td>
+            {{ i.mocktest__totals }}
+        </td>
+    </tr>
+
+     {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is a test for template</title>
+</head>
+<body align="center" >
+    this is a test for the template using templates <br>
+    <br>
+
+
+    <table border="1" >
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                email
+            </th>
+            <th>
+                college acronym
+            </th>
+            <th>
+                Marks
+            </th>
+        </tr>
+            {% for i in student_list %}
+        <tr>
+            <td>
+                {{ i.name }}
+            </td>
+            <td>
+                {{ i.email }}
+            </td>
+            <td>
+                {{ i.college__acronym }}
+            </td>
+
+            <td>
+                <input type="submit"  onclick="getmymarks( '{{i.id }}'  )" >
+            </td>
+        </tr>
+            {% endfor %}
+    </table>
+
+    <script>
+        function getmymarks(id){
+        alert(id);
+        }
+    </script>
+
+</body>
+</html>
